@@ -18,7 +18,7 @@ def lewl():
 	print(lewl)
 
 
-
+lewl()
 lewl()
 
 
