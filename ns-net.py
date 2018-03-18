@@ -22,7 +22,7 @@ weights = 2 * random.random((3, 1)) - 1
 
 print inputs
 
-for i in xrange(100):
+for i in xrange(15):
 	print i
 	
 	out = sig(dot(inputs, weights))
@@ -39,17 +39,14 @@ for i in xrange(100):
 
 	weights += dot(inputs.T, adj)
 
-	print
 
-	print weights
+	print '\n', weights
 	
-	#print weights
 	
 
-
+print '\n \n'
 print sig((dot(array([1, 1, 0]), weights)))
-
-
-
+print 
+print sig((dot(array([0, 1, 1]), weights))) , '\n'
 
 
