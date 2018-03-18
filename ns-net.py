@@ -16,7 +16,7 @@ inputs = array([[0, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
 outputs = array([[0, 1, 1, 0]]).T
 
 
-random.seed(1)
+#random.seed(1)
 
 weights = 2 * random.random((3, 1)) - 1
 
