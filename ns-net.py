@@ -12,6 +12,7 @@ def sig_der(x):
 
 
 inputs = array([[0, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
+
 outputs = array([[0, 1, 1, 0]]).T
 
 
@@ -20,7 +21,7 @@ random.seed(1)
 weights = 2 * random.random((3, 1)) - 1
 
 
-for i in xrange(100):
+for i in xrange(10000):
 	
 	out = sig(dot(inputs, weights))
 
@@ -33,11 +34,11 @@ for i in xrange(100):
 	weights += dot(inputs.T, adj)
 
 
-	print weights
-	print
+	#print weights
+	
 
 
-print sig((dot(array([1, 0, 0]), weights)))
+print sig((dot(array([1, 1, 0]), weights)))
 
 
 
