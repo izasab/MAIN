@@ -3,8 +3,6 @@ from numpy import exp, array, random, dot
 
 class NeuralNetwork():
     def __init__(self):
-        # Seed the random number generator, so it generates the same numbers
-        # every time the program runs.
         random.seed(1)
 
         # We model a single neuron, with 3 input connections and 1 output connection.
@@ -26,8 +24,9 @@ class NeuralNetwork():
 
     # We train the neural network through a process of trial and error.
     # Adjusting the synaptic weights each time.
-    def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
-        for iteration in xrange(number_of_training_iterations):
+    def train(self, training_set_inputs, training_set_outputs, num_iter):
+
+        for iteration in xrange(num_iter):
             # Pass the training set through our neural network (a single neuron).
             output = self.think(training_set_inputs)
 
