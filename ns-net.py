@@ -22,31 +22,35 @@ weights = 2 * random.random((3, 1)) - 1
 
 print inputs
 
-for i in xrange(15):
-	print i
+out = array(4)
+
+for i in xrange(100000):
+	#print i
 	
 	out = sig(dot(inputs, weights))
-	print 'out: \n', out
+	#print 'out: \n', out
 
 
 	error = outputs - out
-	print 'error: \n', error
+	#print 'error: \n', error
 
 
 	adj = error * sig_der(out)
-	print 'adj: \n', adj
+	#print 'adj: \n', adj
 
 
 	weights += dot(inputs.T, adj)
 
 
-	print '\n', weights
+	#print '\n', weights
 	
 	
 
 print '\n \n'
-print sig((dot(array([1, 1, 0]), weights)))
+print "iz test"
+print sig((dot(array([0, 0, 1]), weights)))
 print 
 print sig((dot(array([0, 1, 1]), weights))) , '\n'
+print out
 
 
