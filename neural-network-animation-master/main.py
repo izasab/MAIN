@@ -17,7 +17,8 @@ if __name__ == "__main__":
 
     # Assemble a neural network, with 3 neurons in the first layer
     # 4 neurons in the second layer and 1 neuron in the third layer
-    network = NeuralNetwork([3, 4, 1])
+    
+    network = NeuralNetwork([3, 4, 4, 1]) #ns moding #should be [3, 4, 1]
 
     # Training set
     examples = [TrainingExample([0, 0, 1], 0),
