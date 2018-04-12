@@ -1,14 +1,12 @@
 from numpy import exp, array, random, dot
 
 
-
-
 def sig(x):
-	return 1 / (1 + exp(-x))
+    return 1 / (1 + exp(-x))
+
 
 def sig_der(x):
-	return x * (1 - x)
-
+    return x * (1 - x)
 
 
 inputs = array([[0, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
@@ -16,7 +14,7 @@ inputs = array([[0, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
 outputs = array([[0, 1, 1, 0]]).T
 
 
-#random.seed(1)
+# random.seed(1)
 
 weights = 2 * random.random((3, 1)) - 1
 
@@ -25,32 +23,25 @@ print inputs
 out = array(4)
 
 for i in xrange(100000):
-	#print i
-	
-	out = sig(dot(inputs, weights))
-	#print 'out: \n', out
+    # print i
 
+    out = sig(dot(inputs, weights))
+    # print 'out: \n', out
 
-	error = outputs - out
-	#print 'error: \n', error
+    error = outputs - out
+    # print 'error: \n', error
 
+    adj = error * sig_der(out)
+    # print 'adj: \n', adj
 
-	adj = error * sig_der(out)
-	#print 'adj: \n', adj
+    weights += dot(inputs.T, adj)
 
+    # print '\n', weights
 
-	weights += dot(inputs.T, adj)
-
-
-	#print '\n', weights
-	
-	
 
 print '\n \n'
 print "iz test"
 print sig((dot(array([0, 0, 1]), weights)))
-print 
-print sig((dot(array([0, 1, 1]), weights))) , '\n'
+print
+print sig((dot(array([0, 1, 1]), weights))), '\n'
 print out
-
-

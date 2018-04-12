@@ -16,7 +16,6 @@ class NeuralNetwork():
     # normalise them between 0 and 1.
     def __sigmoid(self, x):
         return 1 / (1 + exp(-x))
-
     # The derivative of the Sigmoid function.
     # This is the gradient of the Sigmoid curve.
     # It indicates how confident we are about the existing weight.
