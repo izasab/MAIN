@@ -1,6 +1,6 @@
 import parameters
 from matplotlib import pyplot, animation, rcParams
-
+import matplotlib
 
 def generate_writer():
     FFMpegWriter = animation.writers['ffmpeg']
