@@ -4,6 +4,7 @@ import os
 from PIL import Image
 import eyed3
 
+
 from sliceSpectrogram import createSlicesFromSpectrograms
 from audioFilesTools import isMono, getGenre
 from config import rawDataPath
@@ -40,7 +41,7 @@ def createSpectrogram(filename,newFilename):
 		print errors
 
 	#Remove tmp mono track
-	os.remove("/tmp/{}.mp3".format(newFilename))
+	#os.remove("/tmp/{}.mp3".format(newFilename)) #un-uncomment mod ns
 
 #Creates .png whole spectrograms from mp3 files
 def createSpectrogramsFromAudio():
@@ -63,7 +64,7 @@ def createSpectrogramsFromAudio():
 		fileGenre = getGenre(rawDataPath+filename)
 		genresID[fileGenre] = genresID[fileGenre] + 1 if fileGenre in genresID else 1
 		fileID = genresID[fileGenre]
-		newFilename = fileGenre+"_"+str(fileID)
+		newFilename = str(fileGenre) + str("_") + str(fileID)
 		createSpectrogram(filename,newFilename)
 
 #Whole pipeline .mp3 -> .png slices

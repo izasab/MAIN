@@ -13,7 +13,7 @@ def createSlicesFromSpectrograms(desiredSize):
 #Creates slices from spectrogram
 #TODO Improvement - Make sure we don't miss the end of the song
 def sliceSpectrogram(filename, desiredSize):
-	genre = filename.split("_")[0] 	#Ex. Dubstep_19.png
+	genre = filename.split("\_")[0] 	#Ex. Dubstep_19.png
 
 	# Load the full spectrogram
 	img = Image.open(spectrogramsPath+filename)
